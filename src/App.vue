@@ -29,7 +29,7 @@
 
             <div class="row">
               <div class="col">
-                <button type="submit" class="btn btn-primary">&nbsp;&nbsp;&nbsp;&nbsp;Войти&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                <button type="submit" class="color-btn btn btn-primary">&nbsp;&nbsp;&nbsp;&nbsp;Войти&nbsp;&nbsp;&nbsp;&nbsp;</button>
               </div>
 
               <div class="col text-end">
@@ -71,17 +71,15 @@
 
             <div class="row mb-4">
               <div class="col mx-auto">
-                <button type="submit" class="btn btn-primary">&nbsp;&nbsp;&nbsp;Восстановить&nbsp;&nbsp;&nbsp;</button>
+                <button type="submit" class="color-btn btn btn-primary">&nbsp;&nbsp;&nbsp;Восстановить&nbsp;&nbsp;&nbsp;</button>
               </div>
 
               <div class="col mx-auto text-end">
-                <div @click="signIn" id="signIn" class="form-text text-primary get-back-to-sign-in">Продолжить вход</div>
+                <div @click="signIn" id="signIn" class="form-text text-primary get-back-to-sign-in"><a href="">Продолжить вход</a></div>
               </div>
-            
             </div>
             <hr>
 
-            <div id="signUp" class="form-text mt-3 text-justify">Всё ещё не зарегистрированы на сайте? <a href="#">Регистрация.</a></div>
           </div>
 
         </form>
@@ -92,8 +90,6 @@
 </template>
 
 <script>
-import { stringifyExpression } from '@vue/compiler-core';
-
 export default {
   data() {
     return {
@@ -112,7 +108,7 @@ export default {
       this.step = 1
     },
     letUserIn() {
-      //somethng
+      //something
     },
     changePasswordType(num) {
       if (num === 1) {
@@ -149,6 +145,15 @@ export default {
 
 .showing-stealth span i.conceal-btn::before{
   content: "\f070";
+}
+
+.color-btn{
+  background-color: #296751;
+  border-color: #296751;
+}
+
+a{
+  color: #296751;
 }
 
 </style>
