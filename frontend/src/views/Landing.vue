@@ -5,6 +5,6 @@
 
 <template>
   <main>
-    body
+
   </main>
 </template>
