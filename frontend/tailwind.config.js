@@ -35,7 +35,11 @@ export default {
       'main': '#8DD3BB',
       'purchase': '#CDEAE1',
       'altmain': '#296751',
-      'muted': '#6c757d'
+      'muted': '#6c757d',
+      'gray' : '#9ca3af',
+      'lightgray' : '#d1d5db',
+      'green': '#16a34a',
+      'darkgray': '#1f2937'
     },
   },
   plugins: [],

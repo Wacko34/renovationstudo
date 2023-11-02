@@ -1,5 +1,5 @@
 <template>
-    <div class="container mx-auto sm:px-4 max-w-full mx-auto sm:px-4 bg-main border-none">
+    <div class="mt-12 container mx-auto sm:px-4 max-w-full mx-auto sm:px-4 bg-main border-none">
         <div class="container mx-auto sm:px-4  mw-90 border-none">
         <footer class="flex flex-wrap  row-cols-5 py-5 border-none">
             <div class="relative flex-grow max-w-full flex-1 px-4">

@@ -1,7 +1,7 @@
 <template>
     <!--Header -->
     <div class="flex flex-wrap ">
-        <header class="border-b text-lg	container mx-auto sm:px-4 max-w-full mx-auto sm:px-4 header pt-3 pb-2 bg-white border-none">
+        <header class="border-b text-lg	container max-w-full mx-auto sm:px-4 header pt-3 pb-2 bg-white border-none">
             <div class="sm:container mx-auto xl:px-5 mw-75">
                 <div class="flex flex-wrap ">
                     <!-- ЛОГО -->
@@ -22,9 +22,9 @@
         </header>
     </div>
     <!--Navbar -->
-    <div class="flex flex-wrap ">
-        <nav class="flex flex-wrap items-center content-between py-3 px-4  container mx-auto sm:px-4 max-w-full mx-auto sm:px-4 navbar-container bg-main">
-            <div class="flex flex-wrap mx-auto sm:px-4 mx-auto w-65">
+    <div class="flex flex-wrap mb-5">
+        <nav class="flex flex-wrap items-center content-between py-3 px-4  container  max-w-full mx-auto sm:px-4 navbar-container bg-main">
+            <div class="flex flex-wrap  sm:px-4 mx-auto w-65">
                 <div class="w-1/5 flex-grow max-w-full flex-1 px-4">
                     <a class="inline-block py-2 px-4 no-underline nav-item" href="#">О нас</a>
                 </div>
