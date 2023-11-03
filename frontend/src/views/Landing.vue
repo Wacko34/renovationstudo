@@ -1,5 +1,4 @@
 <script setup lang="ts">
-  import TheWelcome from '../components/TheWelcome.vue'
   document.title = 'ПРИстройка';
 </script>
 
@@ -8,3 +7,10 @@
 
   </main>
 </template>
+
+
+<style scoped>
+main {
+    flex-grow: 1;
+}
+</style>

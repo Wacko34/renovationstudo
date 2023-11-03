@@ -8,16 +8,16 @@
             </div>
         </div>
         <div class="right">
-            <button class="loginBtn" type="button">Войти</button>
+            <button class="loginBtn round" type="button">Войти</button>
         </div>
     </div>
     <div class="menu">
         <div class="row flex justify-between items-center h-full w-70%">
+            <button>Услуги</button>
             <button>Портфолио</button>
-            <button>Цены</button>
             <button>Отзывы</button>
             <button>О нас</button>
-            <button class="green">Заказать ремонт</button>
+            <button class="green round">Заказать ремонт</button>
         </div>
     </div>
 </header>
@@ -48,15 +48,13 @@ header > .row > .right > .loginBtn {
     padding: 10px 25px;
     cursor: pointer;
     background: #fff;
-    border-radius: 4px;
+    border-width: 1px;
     transition: 0.25s box-shadow;
 }
 
 header > .row > .right > .loginBtn:hover {
-    padding: 10px 25px;
     cursor: pointer;
     background: #fff;
-    border-radius: 4px;
     box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.3);
 }
 
@@ -85,7 +83,6 @@ header > .menu > .row > button:not(.green):hover {
 header > .menu > .row > button.green {
     background: rgba(255, 255, 255, 0.5);
     transition: 0.25s box-shadow;
-    border-radius: 4px;
 }
 
 header > .menu > .row > button.green:hover {
