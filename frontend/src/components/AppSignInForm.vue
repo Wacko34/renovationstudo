@@ -70,7 +70,7 @@
                   aria-describedby="remember"
                   type="checkbox"
                   class="w-3 h-3 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-main dark:bg-gray dark:border-gray dark:focus:ring-main dark:ring-offset-gray"
-                  required=""
+                  required
                 >
               </div>
               <div class="ml-1.5 text-sm">
@@ -118,8 +118,9 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 export default {
+  emits: ['requirePasswordChange'],
   data() {
     return {
         step : 1,

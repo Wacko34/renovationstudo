@@ -138,8 +138,9 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 export default {
+  emits: ['continueSigningIn'],
   data() {
     return {
       step : 1,
@@ -160,7 +161,7 @@ export default {
     letUserIn() {
       //something
     },
-    changePasswordType(num) {
+    changePasswordType(num: number) {
       if (num === 1) {
         this.passIsHidden1 = !this.passIsHidden1
       } else if (num === 2) {
