@@ -1,4 +1,5 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
+sh hooks/branch-validator.sh
 npm run pre-commit
