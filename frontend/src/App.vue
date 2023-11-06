@@ -1,7 +1,7 @@
 <template>
-  <AppHeader></AppHeader>
+  <AppHeader />
   <RouterView />
-  <AppFooter></AppFooter>
+  <AppFooter />
 </template>
 
 <script lang="ts">

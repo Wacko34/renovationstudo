@@ -1,10 +1,10 @@
 <template>
   <div v-show="needPasswordChande">
-    <AppForgetPasswordForm @continueSigningIn="OnContinueSigningIn"></AppForgetPasswordForm>
+    <AppForgetPasswordForm @continueSigningIn="OnContinueSigningIn" />
   </div>
 
   <div v-show="!needPasswordChande">
-    <AppSignInForm @requirePasswordChange="OnPasswordRequireChange"></AppSignInForm>
+    <AppSignInForm @requirePasswordChange="OnPasswordRequireChange" />
   </div>
 </template>
 
