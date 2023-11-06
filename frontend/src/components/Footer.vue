@@ -1,5 +1,5 @@
 <template>
-    <footer class="relative">
+    <footer class="relative" :style="footerStyle">
         <FeedbackForm v-if="feedbackFormEnable" />
         <div id="footer-container" :style="containerStyle">
             <div id="about" :style="aboutStyle">
@@ -60,9 +60,17 @@ const feedbackFormEnable = ref(false);
 const router = useRouter();
 const currentRoute = router.currentRoute.value; 
 
-const containerStyle = computed(() => {
+const footerStyle = computed(() => {
       if (currentRoute.path === '/') {
         feedbackFormEnable.value = true;
+        return { marginTop: '220px' }; 
+      }
+
+      return {}; 
+});
+
+const containerStyle = computed(() => {
+      if (currentRoute.path === '/') {
         return { height: '400px' }; 
       }
 

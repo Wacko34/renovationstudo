@@ -76,7 +76,7 @@ header > .menu > .row > button:not(.green):hover {
 }
 
 header > .menu > .row > button.green {
-    background: rgba(255, 255, 255, 0.5);
+    background: #cdeae1;
     transition: 0.25s box-shadow;
 }
 
