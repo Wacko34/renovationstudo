@@ -1,68 +1,48 @@
 <template>
-    <footer>
-        <div class="contact-form round">
-            <div class="w-65%">
-                <span class="phone">
-                    Оставьте ваш телефон
-                </span>
-                <span>
-                    И мы свяжемся с вами
-                </span>
-                <form class="mt-15px" action="" method="post">
-                    <div class="h-40px mt-30px">
-                        <label class="block mb-5px mt-10px" for="name">Ваше имя</label>
-                        <input class="round" type="text" name="name">
-                        <label class="block mb-5px mt-10px" for="phone">Номер телефона</label>
-                        <input class="round" type="tel" name="phone">
-                        <label class="block mb-5px mt-10px" for="email">Почта</label>
-                        <input class="round" type="email" name="email">
-                        <button class="sendBtn round" type="submit">Отправить</button>
-                    </div>
-                </form>
-            </div>
-            <div class="w-35%" style="display: flex; flex-direction: column; justify-content: flex-end;">
-                <img class="w-90% flex-self-end" src="@/assets/img/post.png" alt="post" />
-            </div>
-        </div>
-        <div class="h-400px bg-#8dd3bb">
-            <div class="pt-220px flex h-100% w-100%">
+    <footer class="relative">
+        <FeedbackForm v-if="feedbackFormEnable" />
+        <div id="footer-container" :style="containerStyle">
+            <div id="about" :style="aboutStyle">
                 <div class="flex grow flex-justify-center">
                     <div class="flex-col">
-                        <img class="w-150px" src="@/assets/img/logo_small.png" alt="logo" />
+                        <img class="w-150px" src="@/assets/img/logo.png" alt="logo" />
                         <p class="font-bold mt-10px mb-10px">Мы в соцсетях</p>
-                        <img class="w-20px mr-10px cursor-pointer" src="@/assets/img/facebook.png" alt="facebook" />
-                        <img class="w-20px mr-10px cursor-pointer" src="@/assets/img/youtube.png" alt="youtube" />
-                        <img class="w-20px mr-10px cursor-pointer" src="@/assets/img/instagram.png" alt="instagram" />
+                        <a href="https://facebook.com/"><img class="w-20px mr-10px cursor-pointer" src="@/assets/img/icon_facebook.png" alt="facebook" /></a>
+                        <a href="https://www.youtube.com/"><img class="w-20px mr-10px cursor-pointer" src="@/assets/img/icon_youtube.png" alt="youtube" /></a>
+                        <a href="https://instagram.com/"><img class="w-20px mr-10px cursor-pointer" src="@/assets/img/icon_instagram.png" alt="instagram" /></a>
                     </div>
                 </div>
                 <div class="flex grow flex-justify-center">
                     <div class="flex-col">
                         <p class="font-bold mt-10px">Информация о нас</p>
-                        <p class="mt-10px">Текст</p>
-                        <p class="mt-10px">Текст</p>
-                        <p class="mt-10px">Текст</p>
+                        <router-link to="/" class="decoration-none"><p class="mt-10px">Команда</p></router-link>
+                        <router-link to="/" class="decoration-none"><p class="mt-10px">Вакансии</p></router-link>
+                        <router-link to="/" class="decoration-none"><p class="mt-10px">Новости</p></router-link>
                     </div>
                 </div>
                 <div class="flex grow flex-justify-center">
                     <div class="flex-col">
                         <p class="font-bold mt-10px">Наши услуги</p>
-                        <p class="mt-10px cursor-pointer">Ремонтные работы</p>
-                        <p class="mt-10px cursor-pointer">Дизайн-проект</p>
-                        <p class="mt-10px cursor-pointer">Ремонт под ключ</p>
+                        <router-link to="/" class="decoration-none"><p class="mt-10px">Ремонтные работы</p></router-link>
+                        <router-link to="/" class="decoration-none"><p class="mt-10px">Дизайн-проект</p></router-link>
+                        <router-link to="/" class="decoration-none"><p class="mt-10px">Ремонт под ключ</p></router-link>
                     </div>
                 </div>
                 <div class="flex grow flex-justify-center">
                     <div class="flex-col">
                         <p class="font-bold mt-10px">Контакты</p>
-                        <p class="mt-10px">+7(999)555-12-34</p>
-                        <p class="mt-10px">test@mail.ru</p>
-                    </div>
-                </div>
-                <div class="flex grow flex-justify-center">
-                    <div class="flex-col">
-                        <p class="font-bold mt-10px">Адрес</p>
-                        <p class="mt-10px">г. Волгоград, ул.</p>
-                        <p class="mt-10px">Волгоградская 1</p>
+                        <div class="mt-10px">
+                            <img class="mr-5px v-middle" src="@/assets/img/icon_phone.png" alt="phone" />
+                            <span>+7(999)555-12-34</span>
+                        </div>
+                        <div class="mt-10px">
+                            <img class="mr-5px v-middle" src="@/assets/img/icon_mail.png" alt="mail" />
+                            <span>test@mail.ru</span>
+                        </div>
+                        <div class="mt-10px">
+                            <img class="mr-5px v-super" src="@/assets/img/icon_home.png" alt="home" />
+                            <span class="inline-block">г. Волгоград, ул. <br> Волгоградская 1</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -72,59 +52,43 @@
 
 
 <script setup lang="ts">
-import { ref } from "vue";
+import FeedbackForm from './FeedbackForm.vue'
+import { useRouter } from "vue-router";
+import { ref, computed } from "vue";
+
+const feedbackFormEnable = ref(false);
+const router = useRouter();
+const currentRoute = router.currentRoute.value; 
+
+const containerStyle = computed(() => {
+      if (currentRoute.path === '/') {
+        feedbackFormEnable.value = true;
+        return { height: '400px' }; 
+      }
+
+      return {}; 
+});
+
+const aboutStyle = computed(() => {
+      if (currentRoute.path === '/') {
+        return { paddingTop: '220px' }; 
+      }
+
+      return {}; 
+});
 </script>
 
 
 <style scoped>
-footer {
-    flex-grow: 0;
-    position:relative;
+#footer-container {
+    height: 200px;
+    background: #8dd3bb;
 }
 
-footer .contact-form {
-    position: absolute;
+#about {
     display: flex;
-    justify-content: space-between;
-    height: 340px;
-    width: 70%;
-    background: #cdeae1;
-    top: -170px;
-    right: 15%;
-    padding: 20px;
-}
-
-footer .contact-form .phone {
-    display: block;
-    margin-bottom: 5px;
-    font-size: x-large;
-    font-weight: bold;
-}
-
-footer form input {
+    padding-top: 30px;
     height: 100%;
-    font-size: x-large;
-    width: 70%;
-    border-style: none;
-}
-
-footer form input:focus {
-    outline: none;
-}
-
-footer form .sendBtn {
-    height: 100%;
-    padding: 10px 25px;
-    cursor: pointer;
-    background: #fff;
-    margin-left: 15px;
-    border-width: 1px;
-    transition: 0.25s box-shadow;
-}
-
-footer form .sendBtn:hover {
-    cursor: pointer;
-    background: #fff;
-    box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.3);
+    width: 100%;
 }
 </style>

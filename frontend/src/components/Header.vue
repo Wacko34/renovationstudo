@@ -2,13 +2,13 @@
 <header>
     <div class="row">
         <div class="left">
-            <img class="logo" src="@/assets/img/logo.png" alt="logo" />
+            <router-link to="/"><img class="w-200px" src="@/assets/img/logo.png" alt="logo" /></router-link>
             <div class="ml-50px">
                 <CitySelector />
             </div>
         </div>
         <div class="right">
-            <button class="loginBtn round" type="button">Войти</button>
+            <router-link to="/"><button class="loginBtn round" type="button">Войти</button></router-link>
         </div>
     </div>
     <div class="menu">
@@ -39,12 +39,7 @@ header > .row > .left, .right {
     align-items: center;
 }
 
-header > .row > .left > .logo {
-    width: 200px;
-    height: 65px;
-}
-
-header > .row > .right > .loginBtn {
+header > .row > .right .loginBtn {
     padding: 10px 25px;
     cursor: pointer;
     background: #fff;
@@ -52,7 +47,7 @@ header > .row > .right > .loginBtn {
     transition: 0.25s box-shadow;
 }
 
-header > .row > .right > .loginBtn:hover {
+header > .row > .right .loginBtn:hover {
     cursor: pointer;
     background: #fff;
     box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.3);
