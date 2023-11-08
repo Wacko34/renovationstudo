@@ -2,7 +2,7 @@
 <div class="contact-form round">
     <div class="w-65%">
         <span class="phone">
-            Оставьте ваш телефон
+            Оставьте свои контактные данные
         </span>
         <span>
             И мы свяжемся с вами
@@ -10,17 +10,17 @@
         <form @submit.prevent="send" class="mt-15px" action="" method="post">
             <div class="h-40px mt-30px">
                 <label class="block mb-5px mt-10px" for="name">Ваше имя</label>
-                <input v-model="name" class="round" type="text" name="name">
+                <input v-model="name" class="round" type="text" name="name" id="name">
                 <label class="block mb-5px mt-10px" for="phone">Номер телефона</label>
-                <input v-model="phone" @input="formatPhoneNumber" class="round" type="tel" name="phone" maxlength="15">
+                <input v-model="phone" @input="formatPhoneNumber" class="round" type="tel" name="phone" id="phone" maxlength="15">
                 <label class="block mb-5px mt-10px" for="email">Почта</label>
-                <input v-model="email" class="round" type="email" name="email">
-                <button class="sendBtn round" type="submit">Отправить</button>
+                <input v-model="email" class="round" type="email" name="email" id="email">
+                <button class="sendBtn font-medium round" type="submit">Отправить</button>
             </div>
         </form>
     </div>
     <div class="w-35%" style="display: flex; flex-direction: column; justify-content: flex-end;">
-        <img class="w-90% flex-self-end" src="@/assets/img/post.png" alt="post" />
+        <img class="h-100% flex-self-end" src="@/assets/img/post.png" alt="post" />
     </div>
 </div>
 </template>
@@ -88,10 +88,10 @@ function send () {
     display: flex;
     justify-content: space-between;
     height: 340px;
-    width: 70%;
+    width: calc(100% - 400px);
     background: #cdeae1;
     top: -170px;
-    right: 15%;
+    right: 200px;
     padding: 20px;
 }
 
@@ -104,7 +104,7 @@ function send () {
 
 form input {
     height: 100%;
-    font-size: x-large;
+    font-size: large;
     width: 70%;
     border-style: none;
 }
@@ -118,7 +118,7 @@ form .sendBtn {
     padding: 10px 25px;
     cursor: pointer;
     background: #fff;
-    margin-left: 15px;
+    margin-left: 20px;
     border-width: 1px;
     transition: 0.25s box-shadow;
 }

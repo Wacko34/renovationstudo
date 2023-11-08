@@ -8,16 +8,16 @@
             </div>
         </div>
         <div class="right">
-            <router-link to="/"><button class="loginBtn round" type="button">Войти</button></router-link>
+            <router-link to="/"><button class="loginBtn font-medium round" type="button">Войти</button></router-link>
         </div>
     </div>
     <div class="menu">
         <div class="row flex justify-between items-center h-full w-70%">
-            <button>Услуги</button>
-            <button>Портфолио</button>
-            <button>Отзывы</button>
-            <button>О нас</button>
-            <button class="green round">Заказать ремонт</button>
+            <button class="font-medium">Услуги</button>
+            <button class="font-medium">Портфолио</button>
+            <button class="font-medium">Отзывы</button>
+            <button class="font-medium">О нас</button>
+            <button class="green font-medium round">Заказать ремонт</button>
         </div>
     </div>
 </header>

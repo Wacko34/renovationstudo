@@ -9,37 +9,46 @@
         <button class="green round">Заказать дизайн-проект</button>
       </div>
     </div>
+
     <div class="margin mt-50px">
       <div class="flex justify-between">
         <span class="font-size-6 font-bold">Наши услуги</span>
         <button class="white round">Посмотреть все</button>
       </div>
       <div class="flex justify-between mt-30px">
-        <div class="service round flex flex-col flex-items-center w-30%">
+        <router-link to="/" class="service round flex flex-col flex-items-center w-30%">
           <div class="relative w-100%">
             <div class="bgImage round pt-70%" :style="{backgroundImage: `url(src/assets/img/service-renovation.jpg)`}"></div>
           </div>
           <span class="font-semibold mt-30px mb-30px">Косметический ремонт</span>
-        </div>
-        <div class="service round flex flex-col flex-items-center w-30%">
+        </router-link>
+        <router-link to="/" class="service round flex flex-col flex-items-center w-30%">
           <div class="relative w-100%">
             <div class="bgImage round pt-70%" :style="{backgroundImage: `url(src/assets/img/service-design.jpg)`}"></div>
           </div>
           <span class="font-semibold mt-30px mb-30px">Дизайн-проект</span>
-        </div>
-        <div class="service round flex flex-col flex-items-center w-30%">
+        </router-link>
+        <router-link to="/" class="service round flex flex-col flex-items-center w-30%">
           <div class="relative w-100%">
             <div class="bgImage round pt-70%" :style="{backgroundImage: `url(src/assets/img/service-turnkey.jpg)`}"></div>
           </div>
           <span class="font-semibold mt-30px mb-30px">Ремонт под ключ</span>
-        </div>
+        </router-link>
       </div>
+    </div>
+
+    <div class="margin mt-50px">
+      <div class="flex justify-between">
+        <span class="font-size-6 font-bold">Наши дизайн-проекты</span>
+      </div>
+      <OurProjectsSlider />
     </div>
   </main>
 </template>
 
 
 <script setup lang="ts">
+import OurProjectsSlider from '../components/OurProjectsSlider.vue'
 document.title = 'ПРИстройка';
 </script>
 
@@ -50,14 +59,8 @@ main {
 }
 
 .margin {
-  margin-left: 100px;
-  margin-right: 100px;
-}
-
-.bgImage {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
+  margin-left: 200px;
+  margin-right: 200px;
 }
 
 .title-block {
@@ -89,7 +92,7 @@ button {
 button.green {
   width: 100%;
   border-style: none;
-  font-weight: 600;
+  font-weight: 550;
   background: #cdeae1;
 }
 
